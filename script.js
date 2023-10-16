@@ -41,29 +41,18 @@ function getComputerChoice() {
 // Get the winner of a single round of rock-paper-scissors
 function getWinner(playerChoice, computerChoice) {
     if (playerChoice === 'rock') {
-        if (computerChoice === 'rock') {
-            return 'tie';
-        } else if (computerChoice === 'paper') {
-            return 'win';
-        } else {
-            return 'loss';
-        }
+
+        return (computerChoice === 'rock') ? 'tie'
+            : (computerChoice === 'paper') ? 'win'
+            : 'loss';
     } else if (playerChoice === 'paper') {
-        if (computerChoice === 'rock') {
-            return 'win';
-        } else if (computerChoice === 'paper') {
-            return 'tie';
-        } else {
-            return 'loss';
-        }
+        return (computerChoice === 'rock') ? 'win'
+            : (computerChoice === 'paper') ? 'tie'
+            : 'loss';
     } else {
-        if (computerChoice === 'rock') {
-            return 'loss';
-        } else if (computerChoice === 'paper') {
-            return 'win';
-        } else {
-            return 'tie';
-        }
+        return (computerChoice === 'rock') ? 'loss'
+            : (computerChoice === 'paper') ? 'win'
+            : 'tie';
     }
 }
 
@@ -126,7 +115,6 @@ function game() {
     if (winCount > lossCount) {
         console.log('You won the game!');
     } else {
-        // There will be no overall ties as there are odd numbered rounds
         console.log('You lost the game! Play again by typing \'game()\' in the console.');
     }
 

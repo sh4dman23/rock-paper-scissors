@@ -10,7 +10,7 @@ function getPlayerChoice(roundNumber) {
         playerChoice = prompt(`Round #${roundNumber}: Choose your weapon. Rock/Paper/Scissors`);
 
         if (playerChoice == null) {
-            // Error 1: Game was aborted.
+            // Game was aborted
             return 1;
         }
 
@@ -26,7 +26,6 @@ function getPlayerChoice(roundNumber) {
 
 // Get the computer's choice
 function getComputerChoice() {
-    // Random integer in the range (0, 2)
     let choiceNum = Math.floor(Math.random() * 3);
 
     if (choiceNum === 0) {
@@ -58,20 +57,16 @@ function getWinner(playerChoice, computerChoice) {
 
 // Play multiple rounds of the game
 function game() {
-    // Set rounds played to 0
-    let roundsPlayed = 0;
-
-    // Initialize counts to 0
     let winCount = 0, lossCount = 0, tieCount = 0;
 
     // Initialize logs to an empty list
-    let logs = [];
+    const logs = [];
 
     console.log('Welcome to Rock, Paper, Shotgun- uh, I meant, Rock, Paper, Scissors!');
     console.log(`The game has begun. Get the best of ${MAXROUNDS} rounds to win!`);
 
     // Play Maxround number of rounds
-    while(roundsPlayed < MAXROUNDS) {
+    for(let roundsPlayed = 0; roundsPlayed < MAXROUNDS; roundsPlayed++) {
         // Get and store player's choice
         let playerChoice = getPlayerChoice(roundsPlayed + 1);
 
@@ -86,7 +81,7 @@ function game() {
         // Get the winner and return result to player
         const result = getWinner(playerChoice, computerChoice);
 
-        // Title-case player's choice
+        // Title-case choices
         playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
         computerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
 
@@ -106,9 +101,6 @@ function game() {
             tieCount++;
             console.log(`Tie! ${playerChoice} can\'t beat ${computerChoice}`);
         }
-
-        // Increase rounds played
-        roundsPlayed++;
     }
 
     // Provide overall result

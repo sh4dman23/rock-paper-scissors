@@ -86,7 +86,7 @@ function game() {
         // Get and store player's choice
         let playerChoice = getPlayerChoice(roundsPlayed + 1);
 
-        // Abort if playerchoice is empty
+        // Abort if playerChoice is empty
         if (playerChoice === 1) {
             console.warn('Game was aborted! Type \'game()\' in the console to play again!');
             return;

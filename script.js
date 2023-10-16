@@ -78,8 +78,8 @@ function game() {
     // Initialize logs to an empty list
     let logs = [];
 
-    console.log('Welcome to Rock, Paper, Scissors- uh, I meant, Rock, Paper, Scissors!');
-    console.log('The game has begun. Get the best of 5 rounds to win!');
+    console.log('Welcome to Rock, Paper, Shotgun- uh, I meant, Rock, Paper, Scissors!');
+    console.log(`The game has begun. Get the best of ${MAXROUNDS} rounds to win!`);
 
     // Play Maxround number of rounds
     while(roundsPlayed < MAXROUNDS) {

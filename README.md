@@ -1,0 +1,2 @@
+# Rock, Paper, Scissors
+Project for [TOP](https://www.theodinproject.com/)'s [Foundation Course](https://www.theodinproject.com/paths/foundations/courses/foundations). Play in the console. This program doesn't have a GUI yet, but will soon.

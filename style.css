@@ -66,7 +66,6 @@ button:disabled:hover, button:disabled:active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap;
     gap: 1rem;
 }
 

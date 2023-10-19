@@ -38,8 +38,7 @@ buttonContainer.addEventListener('click', (e) => {
     const computerChoice = getComputerChoice();
     const roundResult = getWinner(playerChoice, computerChoice);
 
-    updateImage('player', playerChoice);
-    updateImage('computer', computerChoice);
+    updateImage(false, playerChoice, computerChoice);
 
     if (roundResult === 'win') {
         statusBox.textContent = 'You won the round!';
@@ -80,6 +79,16 @@ function startGame() {
     computerScore = 0;
     roundsPlayed = 0;
     gameStarted = true;
+
+    statusBox.textContent = 'Choose Your Weapon';
+    resultBox.textContent = 'First to 5 points wins!';
+
+    // Reset the images
+    updateImage(true);
+
+    // Set UI counters to 0
+    let scores = document.querySelectorAll('#playerScore, #computerScore');
+    scores.forEach(score => score.textContent = 0);
 }
 
 function toggleButtons() {
@@ -118,20 +127,39 @@ function getWinner(playerChoice, computerChoice) {
     }
 }
 
-function updateImage(sideToUpdate, choice) {
-    const img = (sideToUpdate === 'player') ? document.querySelector('.last-moves .move-box:nth-child(1)').querySelector('img')
-                : document.querySelector('.last-moves .move-box:nth-child(2)').querySelector('img');
-    img.alt = choice;
+// Changes image to show last moves by player and computer
+function updateImage(reset=false, playerChoice, computerChoice) {
+    if (reset === true) {
+        const imgDivs = document.querySelectorAll('.last-moves .move-box');
+        imgDivs.forEach(imgDiv => {
+            const img = imgDiv.querySelector('img');
+            img.src = './images/unknown.png';
+            img.alt = 'No Moves Made';
+        });
+    }
 
-    switch(choice) {
-        case 'Rock':
-            img.src = './images/rock.png';
-            break;
-        case 'Paper':
-            img.src = './images/paper.png';
-            break;
-        case 'Scissors':
-            img.src = './images/scissors.png';
-            break;
+    for (let i = 0; i < 2; i++) {
+        let choice;
+        const img = document.querySelector('.last-moves .move-box:nth-child(' + parseInt(i + 1) + ')').querySelector('img');
+
+        if (i === 0) {
+            choice = playerChoice;
+        } else {
+            choice = computerChoice;
+        }
+
+        img.alt = choice;
+
+        switch(choice) {
+            case 'Rock':
+                img.src = './images/rock.png';
+                break;
+            case 'Paper':
+                img.src = './images/paper.png';
+                break;
+            case 'Scissors':
+                img.src = './images/scissors.png';
+                break;
+        }
     }
 }

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&family=Tilt+Neon&display=swap');
+
+body {
+    background-color: cadetblue;
+    box-sizing: border-box;
+}
+
+img {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+button:disabled {
+    background-color: rgba(193, 199, 201, 0.2) !important;
+}
+
+button:disabled:hover, button:disabled:active {
+    box-shadow: none !important;
+    translate: unset !important;
+    cursor: default !important;
+}
+
+.game-title {
+    text-align: center;
+    font-family: 'Tilt Neon', 'Roboto', sans-serif;
+    font-size: 36px;
+}
+
+.info {
+    text-align: center;
+    font-size: medium;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    gap: 1rem;
+}
+
+.game-buttons > button {
+    padding: 10px 1rem;
+    background-color: aliceblue;
+}
+
+.game-buttons > button:hover {
+    translate: 0px -2px;
+    box-shadow: 1px 1px black;
+}
+
+.game-buttons > button:active {
+    translate: 0px 2px;
+}
+
+.last-moves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.move-box {
+    padding: 0px 2rem;
+    border-radius: 10px;
+}
+
+.move-box > img {
+    height: 175px;
+}
+
+.move-box:hover {
+    background-color: rgba(193, 199, 201, 0.2);
+}
+
+.choices-box {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    padding-bottom: 2rem;
+}
+
+.choice {
+    width: 150px;
+    height: 150px;
+    padding: 10px 2px 5px 5px;
+    background-color: rgba(116, 126, 130, 0.3);
+}
+
+.choice > img {
+    width: 100%;
+    height: 100%;
+}
+
+.choice:hover {
+    background-color: rgba(193, 199, 201, 0.2);
+}
+
+.choice:active {
+    background-color: rgba(206, 209, 214, 0.4);
+}

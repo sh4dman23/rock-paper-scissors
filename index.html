@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="./script.js"></script>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
 
         <title>Rock, Paper, Scissors</title>
     </head>
     <body>
-        <h1>Rock, Paper, Scissors</h1>
-        <p>
-            Play in the console. This program doesn't have a GUI yet, but will soon. Start by typing <code>game();</code> in the console, which
-            can be opened via 'Ctrl + Shift + J' if you're on Windows or Linux, and 'Cmd + Option + J' if you're on Mac!
-        </p>
+        <h1 class="game-title"><span style="color: lightcoral">Rock</span>,
+            <span style="color: lightgray">Paper</span>,
+            <span style="color: lightblue">Scissors</span>
+        </h1>
+        <div class="container">
+            <div class="game-buttons">
+                <button id="newGame">New Game</button>
+                <button id="restartGame">Restart</button>
+            </div>
+
+            <div class="info">
+                <h2 id="status">Choose Your Weapon</h2>
+                <p id="moveResult">First to 5 points wins!</p>
+            </div>
+
+            <div class="last-moves">
+                <div class="move-box">
+                    <h2>Your Move</h2>
+                    <img src="./images/unknown.png" alt="No Moves Made">
+                    <p>Your Score: <span id="playerScore">0</span></p>
+                </div>
+                <div class="move-box">
+                    <h2>Enemy's Move</h2>
+                    <img src="./images/unknown.png" alt="No Moves Made">
+                    <p>Enemy's Score: <span id="computerScore">0</span></p>
+                </div>
+            </div>
+
+            <div id="choiceSelection" class="choices-box">
+                <button class="choice" name="Rock">
+                    <img src="./images/rock.png" alt="rock">
+                </button>
+                <button class="choice" name="Paper">
+                    <img src="./images/paper.png" alt="paper">
+                </button>
+                <button class="choice" name="Scissors">
+                    <img src="./images/scissors.png" alt="scissors">
+                </button>
+            </div>
+        </div>
     </body>
 </html>
